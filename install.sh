@@ -119,10 +119,10 @@ download_cleanroomcli() {
 
     cd "$current_dir"
 
-    echo
 }
 
 setup_cleanroomcli() {
+    echo "${FMT_YELLOW}Setting up cleanroom cli environments${FMT_RESET}..."
     echo "alias cleanroom-data-owner=$cleanroomcli_dir/data-owner/cleanroom.py" >> ~/.bashrc
     echo "alias cleanroom-user-manager=$cleanroomcli_dir/data-owner-manager/user-manager.py" >> ~/.bashrc
     echo "alias cleanroom-data-owner=\"$cleanroomcli_dir/data-owner/cleanroom.py\"" >> ~/.zshrc
@@ -137,6 +137,12 @@ setup_cleanroomcli() {
     fi
 }
 
+
+print_success() {
+    echo "Setup Cleanroom CLI successfully:"
+    echo "${FMT_GREEN}source ~/.bashrc${FMT_RESET}..."
+    echo "${FMT_GREEN}source ~/.zshrc${FMT_RESET}..."
+}
 
 main() {
   setup_color
@@ -155,10 +161,11 @@ main() {
     echo "${FMT_YELLOW}tar is not installed.${FMT_RESET} Please install tar first."
     exit 1
   fi
-  pip3 install cryptography --upgrade cryptography
-  pip3 install toml cryptography pyOpenSSL tabulate argcomplete
+  pip3 install -q cryptography --upgrade cryptography
+  pip3 install -q toml cryptography pyOpenSSL tabulate argcomplete
   download_cleanroomcli
   setup_cleanroomcli
+  print_success
 
 }
 
