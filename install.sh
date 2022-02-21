@@ -83,7 +83,7 @@ setup_color() {
 }
 
 download_cleanroomcli() {
-    echo "${FMT_YELLOW}Downloading cleanroomcli${FMT_RESET}..."
+    echo "${FMT_GREEN}Downloading P4cleanroom CLI...${FMT_RESET}"
     mkdir -p "$cleanroomcli_dir"
 
     current_dir="$PWD"
@@ -122,11 +122,11 @@ download_cleanroomcli() {
 }
 
 setup_cleanroomcli() {
-    echo "${FMT_YELLOW}Setting up cleanroom cli environments${FMT_RESET}..."
-    echo "alias cleanroom-data-owner=$cleanroomcli_dir/data-owner/cleanroom.py" >> ~/.bashrc
-    echo "alias cleanroom-user-manager=$cleanroomcli_dir/data-owner-manager/user-manager.py" >> ~/.bashrc
-    echo "alias cleanroom-data-owner=\"$cleanroomcli_dir/data-owner/cleanroom.py\"" >> ~/.zshrc
-    echo "alias cleanroom-user-manager=\"$cleanroomcli_dir/data-owner-manager/user-manager.py\"" >> ~/.zshrc
+    echo "${FMT_GREEN}Setting up P4cleanroom CLI environments...${FMT_RESET}"
+    echo "alias p4cleanroom=$cleanroomcli_dir/data-owner/cleanroom.py" >> ~/.bashrc
+    echo "alias p4cleanroom-manager=$cleanroomcli_dir/data-owner-manager/user-manager.py" >> ~/.bashrc
+    echo "alias p4cleanroom=\"$cleanroomcli_dir/data-owner/cleanroom.py\"" >> ~/.zshrc
+    echo "alias p4cleanroom-manager=\"$cleanroomcli_dir/data-owner-manager/user-manager.py\"" >> ~/.zshrc
     
     if command_exists bash; then
       bash -c "source ~/.bashrc"
@@ -139,9 +139,7 @@ setup_cleanroomcli() {
 
 
 print_success() {
-    echo "Setup Cleanroom CLI successfully:"
-    echo "${FMT_GREEN}source ~/.bashrc${FMT_RESET}..."
-    echo "${FMT_GREEN}source ~/.zshrc${FMT_RESET}..."
+    echo "${FMT_GREEN}Setup P4cleanroom CLI successfully...${FMT_RESET}"
 }
 
 main() {
