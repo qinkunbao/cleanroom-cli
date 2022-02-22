@@ -101,7 +101,7 @@ download_cleanroomcli() {
     fi
     cp -r cleanroomcli_*/conf "$cleanroomcli_dir" 
 
-    if [! -d "$cleanroomcli_dir/data-owner" ]; then
+    if [ ! -d "$cleanroomcli_dir/data-owner" ]; then
         cp -r cleanroomcli_*/data-owner "$cleanroomcli_dir" 
     fi
 
