@@ -75,7 +75,7 @@ setup_color() {
   fi
 
   FMT_RED=$(printf '\033[31m')
-  FMT_GREEN=$(printf '\033[32m')
+  FMT_GREEN=$(printf '\033[92m')
   FMT_YELLOW=$(printf '\033[33m')
   FMT_BLUE=$(printf '\033[34m')
   FMT_BOLD=$(printf '\033[1m')
